@@ -35,4 +35,10 @@ public class PlaygroundTest {
         visitor = new Visitor(16, 1.2, 40.0);
         assertEquals(false,  playground.isAllowedTo(visitor));
     }
+    @Test
+    public void entryIfUnder15() {
+        Visitor visitor;
+        visitor = new Visitor(14, 1.2, 40.0);
+        assertEquals(true,  playground.isAllowedTo(visitor));
+    }
 }
