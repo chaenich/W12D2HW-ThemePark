@@ -43,5 +43,10 @@ public class DodgemTest {
         assertEquals(2.25, dodgems.priceFor(visitor), 0.01);
     }
 
-
+    @Test
+    public void chargesFullfPriceIfOver12() {
+        Visitor visitor;
+        visitor = new Visitor(14, 1.2, 40.0);
+        assertEquals(4.50, dodgems.priceFor(visitor), 0.01);
+    }
 }
