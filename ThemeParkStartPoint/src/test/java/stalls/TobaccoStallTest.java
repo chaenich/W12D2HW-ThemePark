@@ -37,4 +37,11 @@ public class TobaccoStallTest {
         assertEquals(false,  tobaccoStall.isAllowedTo(visitor));
     }
 
+    @Test
+    public void canPurchaseIf18OrOver() {
+        Visitor visitor;
+        visitor = new Visitor(19, 1.2, 40.0);
+        assertEquals(true,  tobaccoStall.isAllowedTo(visitor));
+    }
+
 }
