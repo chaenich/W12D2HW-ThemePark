@@ -28,4 +28,10 @@ public class RollercoasterTest {
     public void hasVisitCount() {
         assertEquals(0, rollerCoaster.getVisitCount());
     }
+
+    @Test
+    public void hasDefaultPrice() {
+        assertEquals(8.40, rollerCoaster.defaultPrice(), 0.01);
+    }
+
 }
