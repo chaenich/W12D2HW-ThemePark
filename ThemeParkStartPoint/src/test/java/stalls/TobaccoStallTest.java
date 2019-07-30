@@ -33,7 +33,8 @@ public class TobaccoStallTest {
     @Test
     public void cannotPurchaseIfUnder18() {
         Visitor visitor;
-        visitor = new Visitor(16, 1.2, 40.0);
+        visitor = new Visitor(17, 1.2, 40.0);
         assertEquals(false,  tobaccoStall.isAllowedTo(visitor));
     }
+
 }
