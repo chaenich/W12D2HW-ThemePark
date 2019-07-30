@@ -2,6 +2,7 @@ package attractions;
 
 import org.junit.Before;
 import org.junit.Test;
+import people.Visitor;
 
 import static org.junit.Assert.assertEquals;
 
@@ -32,6 +33,13 @@ public class RollercoasterTest {
     @Test
     public void hasDefaultPrice() {
         assertEquals(8.40, rollerCoaster.defaultPrice(), 0.01);
+    }
+
+    @Test
+    public void chargesDoubleIfPersonOver200() {
+        Visitor visitor;
+        visitor = new Visitor(116, 2.1, 40.0);
+        assertEquals(16.80, rollerCoaster.priceFor(visitor), 0.01);
     }
 
 }

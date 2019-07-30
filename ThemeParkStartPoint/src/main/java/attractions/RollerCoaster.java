@@ -14,11 +14,11 @@ public class RollerCoaster extends Attraction implements ITicketed {
     }
 
     public double priceFor(Visitor visitor) {
-//        double price = defaultPrice();
-//        if (visitor.getAge() < 12) {
-//            price = defaultPrice() * 0.5;
-//        }
-        return 0.0;
+        double price = defaultPrice();
+        if (visitor.getHeight() > 2.0) {
+            price = defaultPrice() * 2;
+        }
+        return price;
     }
 
 }
