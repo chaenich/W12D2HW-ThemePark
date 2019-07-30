@@ -22,5 +22,4 @@ public class Dodgems extends Attraction implements ITicketed, IReviewed {
         }
         return price;
     }
-
 }
