@@ -11,7 +11,7 @@ public class DodgemTest {
 
     @Before
     public void setUp() throws Exception {
-        dodgems = new Dodgems("Bumper Cars", 5);
+        dodgems = new Dodgems("Bumper Cars", 5, 4.50);
     }
 
 
@@ -28,5 +28,10 @@ public class DodgemTest {
     @Test
     public void hasVisitCount() {
         assertEquals(0, dodgems.getVisitCount());
+    }
+
+    @Test
+    public void hasDefaultPrice() {
+        assertEquals(4.50, dodgems.defaultPrice(), 0.01);
     }
 }
