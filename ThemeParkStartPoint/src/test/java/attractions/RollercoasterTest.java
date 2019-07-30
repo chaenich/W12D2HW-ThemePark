@@ -48,4 +48,32 @@ public class RollercoasterTest {
         visitor = new Visitor(116, 1.9, 40.0);
         assertEquals(8.40, rollerCoaster.priceFor(visitor), 0.01);
     }
+
+    @Test
+    public void notAllowedOnLessThan145TallAndYoungerThan12() {
+        Visitor visitor;
+        visitor = new Visitor(11, 1.4, 40.0);
+        assertEquals(false,  rollerCoaster.isAllowedTo(visitor));
+    }
+
+    @Test
+    public void notAllowedOnLess145TallButOlderThan12() {
+        Visitor visitor;
+        visitor = new Visitor(13, 1.4, 40.0);
+        assertEquals(false,  rollerCoaster.isAllowedTo(visitor));
+    }
+
+    @Test
+    public void notAllowedOnMoreThan145TallButYoungerThan12() {
+        Visitor visitor;
+        visitor = new Visitor(11, 1.6, 40.0);
+        assertEquals(false,  rollerCoaster.isAllowedTo(visitor));
+    }
+
+    @Test
+    public void allowedOnMoreThan145TallAndOlderThan12() {
+        Visitor visitor;
+        visitor = new Visitor(13, 1.5, 40.0);
+        assertEquals(true,  rollerCoaster.isAllowedTo(visitor));
+    }
 }
